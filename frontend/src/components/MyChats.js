@@ -26,7 +26,6 @@ const MyChats = ({ fetchAgain }) => {
       };
 
       const { data } = await axios.get("/api/chat", config);
-      // console.log(data)
       setChats(data);
     } catch (error) {
       toast({
@@ -69,17 +68,17 @@ const MyChats = ({ fetchAgain }) => {
       >
         My Chats
         <GroupChatModal>
-        <Button
-          display="flex"
-          fontSize={{ base: "17px", md: "10px", lg: "17px" }}
-          rightIcon={<AddIcon />}
-        >
-          New Group Chat
-        </Button>
+          <Button
+            display="flex"
+            fontSize={{ base: "17px", md: "10px", lg: "17px" }}
+            rightIcon={<AddIcon />}
+          >
+            New Group Chat
+          </Button>
         </GroupChatModal>
       </Box>
       <Box
-        dislay="flex"
+        display="flex"
         flexDir="column"
         p={3}
         bg="#F8F8F8"
@@ -88,7 +87,7 @@ const MyChats = ({ fetchAgain }) => {
         borderRadius="lg"
         overflowY="hidden"
       >
-      {chats ? (
+        {chats ? (
           <Stack overflowY="scroll">
             {chats.map((chat) => (
               <Box
@@ -120,13 +119,8 @@ const MyChats = ({ fetchAgain }) => {
         ) : (
           <ChatLoading />
         )}
-     </Box>
-
-
-
-
+      </Box>
     </Box>
- 
   );
 };
 
